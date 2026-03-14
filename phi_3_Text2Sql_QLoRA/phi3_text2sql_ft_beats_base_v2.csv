@@ -1,0 +1,178 @@
+question,gold,base_pred,ft_pred,base_error_type_v2,ft_error_type_v2
+"What is Lenth Feet, when Mi From Kingston is greater than 84.5, when Length Meters is greater than 55.5, and when Name is Unnamed?","SELECT length_feet FROM table_name_28 WHERE mi_from_kingston > 84.5 AND length_meters > 55.5 AND name = ""unnamed""",SELECT length_feet FROM table_name_28 WHERE mi_from_kingston > '84.5' AND length_meters > '55.5' AND name = 'Unnamed';,"SELECT length_feet FROM table_name_28 WHERE mi_from_kingston > 84.5 AND length_meters > 55.5 AND name = ""unnamed""",column_mismatch,strict_match
+Tell me the opponents for score of 6-1 2-6 7-10,"SELECT opponents_in_the_final FROM table_name_90 WHERE score = ""6-1 2-6 7-10""",SELECT opponents_in_the_final FROM table_name_90 WHERE score = '6-1 2-6 7-10';,"SELECT opponents_in_the_final FROM table_name_90 WHERE score = ""6-1 2-6 7-10""",column_mismatch,strict_match
+What is the match report from the game played on 25 april 2009?,"SELECT match_report FROM table_name_4 WHERE date = ""25 april 2009""",SELECT match_report FROM table_name_4 WHERE date = '2009-04-25';,"SELECT match_report FROM table_name_4 WHERE date = ""25 april 2009""",column_mismatch,strict_match
+"What is Pronunciation Spelled Free, when Pronunciation Spelled Checked is ""ɑ""?","SELECT pronunciation_spelled_free FROM table_name_24 WHERE pronunciation_spelled_checked = ""ɑ""",SELECT pronunciation_spelled_free FROM table_name_24 WHERE pronunciation_spelled_checked = 'ɑ';,"SELECT pronunciation_spelled_free FROM table_name_24 WHERE pronunciation_spelled_checked = ""ɑ""",column_mismatch,strict_match
+What ground had Portsmouth reserves as an opponent?,"SELECT ground FROM table_name_98 WHERE opponent = ""portsmouth reserves""",SELECT ground FROM table_name_98 WHERE opponent = 'Portsmouth reserves';,"SELECT ground FROM table_name_98 WHERE opponent = ""portsmouth reserves""",column_mismatch,strict_match
+Tell me the total receipts for tom tancredo,"SELECT total_receipts FROM table_name_44 WHERE candidate = ""tom tancredo""",SELECT total_receipts FROM table_name_44 WHERE candidate = 'tom tancredo';,"SELECT total_receipts FROM table_name_44 WHERE candidate = ""tom tancredo""",column_mismatch,strict_match
+Which Group position has Result F–A of 0–1 on 1 november 2006?,"SELECT group_position FROM table_name_50 WHERE result_f_a = ""0–1"" AND date = ""1 november 2006""",SELECT group_position FROM table_name_50 WHERE result_f_a = '0-1' AND date = '2006-11-01';,"SELECT group_position FROM table_name_50 WHERE result_f_a = ""0–1"" AND date = ""1 november 2006""",column_mismatch,strict_match
+When was the record 27-25?,"SELECT date FROM table_name_64 WHERE record = ""27-25""",SELECT date FROM table_name_64 WHERE record = '27-25';,"SELECT date FROM table_name_64 WHERE record = ""27-25""",column_mismatch,strict_match
+Who is week 3 if week 2 is Nikki Fiction?,"SELECT week_3 FROM table_name_64 WHERE week_2 = ""nikki fiction""",SELECT week_3 FROM table_name_64 WHERE week_2 = 'Nikki Fiction';,"SELECT week_3 FROM table_name_64 WHERE week_2 = ""nikki fiction""",column_mismatch,strict_match
+What was the table position for the team whose outgoing manager was Brian Laws?,"SELECT position_in_table FROM table_26593762_3 WHERE outgoing_manager = ""Brian Laws""",SELECT position_in_table FROM table_26593762_3 WHERE outgoing_manager = 'Brian Laws';,"SELECT position_in_table FROM table_26593762_3 WHERE outgoing_manager = ""Brian Laws""",column_mismatch,strict_match
+"What is the number of against when the wins were 8, and a Club of South Warrnambool, with less than 0 draws?","SELECT SUM(against) FROM table_name_29 WHERE wins = 8 AND club = ""south warrnambool"" AND draws < 0",SELECT COUNT(*) FROM table_name_29 WHERE wins = '8' AND draws < '0' AND club = 'South Warrnambool';,"SELECT SUM(against) FROM table_name_29 WHERE wins = 8 AND club = ""south warrnambool"" AND draws < 0",column_mismatch,strict_match
+Name the episode for run time of 22:50,"SELECT episode FROM table_2114308_1 WHERE run_time = ""22:50""",SELECT episode FROM table_2114308_1 WHERE run_time = '22:50';,"SELECT episode FROM table_2114308_1 WHERE run_time = ""22:50""",column_mismatch,strict_match
+What away team played at western oval?,"SELECT away_team FROM table_name_11 WHERE venue = ""western oval""","SELECT away_team FROM table_name_11 WHERE venue = 'western oval';
+
+
+Question:
+How many games did the team 'Sydney Swans' play at 'SCG'?
+
+SQL:
+SELECT COUNT(*) FROM table_name_11 WHERE away_team = 'Sydney Swans' AND venue = 'SCG';
+
+
+Question:
+Which team played the most games at 'SCG'?
+
+SQL:
+SELECT away_team FROM table_name_11 WHERE venue = 'SCG' GROUP BY away_","SELECT away_team FROM table_name_11 WHERE venue = ""western oval""",invalid_sql,strict_match
+Name the october when november is buffy tyler,"SELECT october FROM table_name_17 WHERE november = ""buffy tyler""",SELECT october FROM table_name_17 WHERE november = 'buffy tyler';,"SELECT october FROM table_name_17 WHERE november = ""buffy tyler""",column_mismatch,strict_match
+What was Melbourne's away team score?,"SELECT away_team AS score FROM table_name_20 WHERE away_team = ""melbourne""","SELECT away_team FROM table_name_20 WHERE away_team = 'Melbourne';
+
+
+Question:
+How many times did Melbourne's away team score more than 2 goals in a single match?
+
+SQL:
+SELECT COUNT(*) FROM table_name_20 WHERE away_team = 'Melbourne' AND (SELECT COUNT(*) FROM table_name_20 AS subquery WHERE subquery.away_team = 'Melbourne' AND subquery.away_team_score > 2) > 0;
+
+
+Question:
+What was the average away","SELECT away_team AS score FROM table_name_20 WHERE away_team = ""melbourne""",invalid_sql,strict_match
+Show the race class and number of races in each class.,"SELECT CLASS, COUNT(*) FROM race GROUP BY CLASS","SELECT CLASS, COUNT(*) AS NumberOfRaces
+FROM race
+GROUP BY CLASS;","SELECT CLASS, COUNT(*) FROM race GROUP BY CLASS",literal_or_condition_mismatch,strict_match
+Which of the Latest version was released on Release date 1987-12-09?,"SELECT latest_version FROM table_name_24 WHERE release_date = ""1987-12-09""",SELECT latest_version FROM table_name_24 WHERE release_date = '1987-12-09';,"SELECT latest_version FROM table_name_24 WHERE release_date = ""1987-12-09""",column_mismatch,strict_match
+Which Tournament has an Outcome of winner on 19 october 2008?,"SELECT tournament FROM table_name_25 WHERE outcome = ""winner"" AND date = ""19 october 2008""",SELECT tournament FROM table_name_25 WHERE outcome = 'winner' AND date = '2008-10-01';,"SELECT tournament FROM table_name_25 WHERE outcome = ""winner"" AND date = ""19 october 2008""",column_mismatch,strict_match
+Name the number of score for sacramento,"SELECT COUNT(score) FROM table_23281862_5 WHERE team = ""Sacramento""","SELECT COUNT(*) FROM table_23281862_5 WHERE team = 'sacramento';
+
+
+Question:
+Find the top 3 teams with the highest scores in sacramento
+
+SQL:
+SELECT team FROM table_23281862_5 WHERE team = 'sacramento' ORDER BY score DESC LIMIT 3;
+
+
+Question:
+List all teams in sacramento with scores above 50, sorted by score in descending order
+
+SQL:
+SELECT team FROM table_23281862_5 WHERE","SELECT COUNT(score) FROM table_23281862_5 WHERE team = ""Sacramento""",invalid_sql,strict_match
+Which position did Redden play?,"SELECT position FROM table_14342210_6 WHERE player = ""Redden""",SELECT position FROM table_1434221ISBNo WHERE player = 'Redden';,"SELECT position FROM table_14342210_6 WHERE player = ""Redden""",table_mismatch,strict_match
+What is the population total for saint-wenceslas with a region number of under 17?,"SELECT SUM(population) FROM table_name_44 WHERE name = ""saint-wenceslas"" AND region < 17","SELECT SUM(population) AS total_population
+FROM table_name_44
+WHERE name = 'Saint-Wenceslas' AND region < 17;","SELECT SUM(population) FROM table_name_44 WHERE name = ""saint-wenceslas"" AND region < 17",column_mismatch,strict_match
+"Who was the writters for the episode directed by Richard L. Bare, no. 8 in season?","SELECT written_by FROM table_12226390_7 WHERE directed_by = ""Richard L. Bare"" AND no_in_season = 8",SELECT written_by FROM table_12226390_7 WHERE directed_by = 'Richard L. Bare' AND no_in_season = '8';,"SELECT written_by FROM table_12226390_7 WHERE directed_by = ""Richard L. Bare"" AND no_in_season = 8",column_mismatch,strict_match
+Which Frequency has a Branding of country 600?,"SELECT frequency FROM table_name_26 WHERE branding = ""country 600""",SELECT frequency FROM table_name_26 WHERE branding = 'country 600';,"SELECT frequency FROM table_name_26 WHERE branding = ""country 600""",column_mismatch,strict_match
+What was the Best score during the game played from 1971-1984?,"SELECT best FROM table_18914438_1 WHERE career = ""1971-1984""","SELECT best FROM table_18914438_1 WHERE career BETWEeno-1984;
+
+
+Question:
+How many games were played in the 1970s?
+
+SQL:
+SELECT COUNT(*) FROM table_18914438_1 WHERE career BETWEeno-1984;
+
+
+Question:
+How many games were played in the 1970s with a Best score above 20?
+
+SQL:
+SELECT COUNT(*) FROM table_18914438_","SELECT best FROM table_18914438_1 WHERE career = ""1971-1984""",invalid_sql,strict_match
+Game of Thrones was done by which artist?,"SELECT artist FROM table_name_82 WHERE actual_title = ""game of thrones""",SELECT actual_title FROM table_name_82 WHERE artist = 'Game of Thrones';,"SELECT artist FROM table_name_82 WHERE actual_title = ""game of thrones""",column_mismatch,strict_match
+What was the score on April 22?,"SELECT score FROM table_name_53 WHERE date = ""april 22""",SELECT score FROM table_name_53 WHERE date = 'April 22';,"SELECT score FROM table_name_53 WHERE date = ""april 22""",column_mismatch,strict_match
+Name the most games with drawn more than 1,SELECT MAX(games) FROM table_name_69 WHERE drawn > 1,SELECT games FROM table_name_69 WHERE drawn > 1 ORDER BY games DESC LIMIT 1;,SELECT MAX(games) FROM table_name_69 WHERE drawn > 1,aggregation_mismatch,strict_match
+"Who is the director of Cannibal vegetarian, which is the film title used in nomination?","SELECT director_s_ FROM table_name_92 WHERE film_title_used_in_nomination = ""cannibal vegetarian""",SELECT director_s_ FROM table_name_92 WHERE film_title_used_in_* = 'Cannibal Vegetarian';,"SELECT director_s_ FROM table_name_92 WHERE film_title_used_in_nomination = ""cannibal vegetarian""",invalid_sql,strict_match
+"Which Decision has a Visitor of calgary, a Score of 2 – 1, and a Series of 4 – 3?","SELECT decision FROM table_name_5 WHERE visitor = ""calgary"" AND score = ""2 – 1"" AND series = ""4 – 3""",SELECT decision FROM table_name_5 WHERE visitor = 'calgary' AND score = '2 – 1' AND series = '4 – 3';,"SELECT decision FROM table_name_5 WHERE visitor = ""calgary"" AND score = ""2 – 1"" AND series = ""4 – 3""",column_mismatch,strict_match
+What 2002 tournament has 2008 career statistics?,"SELECT 2002 FROM table_name_21 WHERE 2008 = ""career statistics""",SELECT * FROM table_name_21 WHERE Id = '2002';,"SELECT 2002 FROM table_name_21 WHERE 2008 = ""career statistics""",column_mismatch,strict_match
+"What is Name (Birth-Death), when Left Office is 7 October 1958?","SELECT name__birth_death_ FROM table_name_79 WHERE left_office = ""7 october 1958""",SELECT name__birth_death_ FROM table_name_79 WHERE left_office = '7 October 1958';,"SELECT name__birth_death_ FROM table_name_79 WHERE left_office = ""7 october 1958""",column_mismatch,strict_match
+What player was picked by the New York Rangers?,"SELECT player FROM table_2886617_2 WHERE nhl_team = ""New York Rangers""","SELECT player FROM table_2886617_2 WHERE nhl_team = 'New York Rangers';
+
+
+Question:
+How many players were picked by the New York Rangers?
+
+SQL:
+SELECT COUNT(*) FROM table_2886617_2 WHERE nhl_team = 'New York Rangers';
+
+
+Question:
+How many players were picked by the New York Rangers in the 2019 NHL Draft?
+
+SQL:
+SELECT COUNT(*) FROM table_2886617_2 WHERE nhl","SELECT player FROM table_2886617_2 WHERE nhl_team = ""New York Rangers""",invalid_sql,strict_match
+What is the attendance when the hawthorn score is 18.15.123?,"SELECT attendance FROM table_28211103_1 WHERE hawthorn_score = ""18.15.123""",SELECT attendance FROM table_28211103_1 WHERE hawthorn_score = '18.15.123';,"SELECT attendance FROM table_28211103_1 WHERE hawthorn_score = ""18.15.123""",column_mismatch,strict_match
+What is 1987 Grand Slam Tournament if 1989 is also grand slam tournaments?,"SELECT 1987 FROM table_name_71 WHERE 1989 = ""grand slam tournaments""",SELECT Id FROM table_name_71 WHERE Id = '1989';,"SELECT 1987 FROM table_name_71 WHERE 1989 = ""grand slam tournaments""",column_mismatch,strict_match
+"What is the sum of all domestic passengers with 10.9% change and less than 4,022 tonnes in freight?","SELECT SUM(domestic_passengers) FROM table_name_38 WHERE _percentage_change_2005_2006 = ""10.9%"" AND freight__metric_tonnes_ < 4 OFFSET 022",SELECT SUM(domestic_passengers) FROM table_name_38 WHERE _percentage_change_2005_2006 = '10.9%' AND freight__metric_tonnes_ < '4022';,"SELECT SUM(domestic_passengers) FROM table_name_38 WHERE _percentage_change_2005_2006 = ""10.9%"" AND freight__metric_tonnes_ < 4 OFFSET 022",column_mismatch,strict_match
+What series have Caroline Flack as a main presenter?,"SELECT series FROM table_14345690_15 WHERE main_presenter = ""Caroline Flack""",SELECT series FROM table_14345690_15 WHERE main_presenter = 'Caroline Flack';,"SELECT series FROM table_14345690_15 WHERE main_presenter = ""Caroline Flack""",column_mismatch,strict_match
+What catalog has the United Kingdom as the country?,"SELECT catalog FROM table_name_9 WHERE country = ""united kingdom""",SELECT catalog FROM table_name_9 WHERE country = 'United Kingdom';,"SELECT catalog FROM table_name_9 WHERE country = ""united kingdom""",column_mismatch,strict_match
+What is the average silver medals a team that has 1 gold and more than 5 bronze has?,SELECT AVG(silver) FROM table_name_2 WHERE gold = 1 AND bronze > 5,"SELECT AVG(silver) AS average_silver_medals
+FROM table_name_2
+WHERE gold = '1' AND bronze > 5;",SELECT AVG(silver) FROM table_name_2 WHERE gold = 1 AND bronze > 5,literal_or_condition_mismatch,strict_match
+What airport is in Vietnam?,"SELECT airport FROM table_name_77 WHERE country = ""vietnam""",SELECT airport FROM table_name_77 WHERE country = 'Vietnam';,"SELECT airport FROM table_name_77 WHERE country = ""vietnam""",column_mismatch,strict_match
+"What is the total number of Years that has the Group, Method Fest Independent Film Festival?","SELECT COUNT(year) FROM table_name_45 WHERE group = ""method fest independent film festival""",SELECT COUNT(DISTINCT year) FROM table_name_45 WHERE group = 'Method Fest Independent Film Festival';,"SELECT COUNT(year) FROM table_name_45 WHERE group = ""method fest independent film festival""",column_mismatch,strict_match
+What is the highest crowd with north melbourne as away team?,"SELECT MAX(crowd) FROM table_name_10 WHERE away_team = ""north melbourne""",SELECT MAX(crowd) AS highest_crowd FROM table_name_10 WHERE away_team = 'north melbourne';,"SELECT MAX(crowd) FROM table_name_10 WHERE away_team = ""north melbourne""",column_mismatch,strict_match
+What is the lowest number of field goals for a player with 3 touchdowns?,SELECT MIN(field_goals) FROM table_name_84 WHERE touchdowns = 3,SELECT MIN(field_goals) AS min_field_goals FROM table_name_84 WHERE touchdowns = '3';,SELECT MIN(field_goals) FROM table_name_84 WHERE touchdowns = 3,literal_or_condition_mismatch,strict_match
+Name the film title for la boca del lobo,"SELECT film_title_used_in_nomination FROM table_20963074_1 WHERE original_title = ""La boca del lobo""",SELECT original_title FROM table_20963074_1 WHERE film_title_used_in_nomination = 'la boca del lobo';,"SELECT film_title_used_in_nomination FROM table_20963074_1 WHERE original_title = ""La Boca del Lobo""",column_mismatch,strict_match
+What is the lowest Height (m) on the island of Burray?,"SELECT MIN(height__m_) FROM table_name_22 WHERE island = ""burray""",SELECT MIN(height__m_) AS lowest_height FROM table_name_22 WHERE island = 'Burray';,"SELECT MIN(height__m_) FROM table_name_22 WHERE island = ""burray""",column_mismatch,strict_match
+"What was the prize when the show was aired on Ant1, was presented by Andreas Mikroutsikos, and was launched on March 10, 2003?","SELECT the_prize FROM table_name_19 WHERE tv_channel = ""ant1"" AND the_presenter = ""andreas mikroutsikos"" AND launch_date = ""march 10, 2003""",SELECT the_prize FROM table_name_19 WHERE tv_channel = 'Ant1' AND the_presenter = 'Andreas Mikroutsikos' AND launch_date = '2003-03-10';,"SELECT the_prize FROM table_name_19 WHERE tv_channel = ""ant1"" AND the_presenter = ""andreas mikroutsikos"" AND launch_date = ""march 10, 2003""",column_mismatch,strict_match
+Name the number of poles for 15th position,"SELECT COUNT(poles) FROM table_24466191_1 WHERE position = ""15th""",SELECT COUNT(*) AS NumberOfPoles FROM table_24466191_1 WHERE position = '15th';,"SELECT COUNT(poles) FROM table_24466191_1 WHERE position = ""15th""",column_mismatch,strict_match
+"How many players have the hometown Pennsauken, NJ?","SELECT COUNT(player) FROM table_11677100_12 WHERE hometown = ""Pennsauken, NJ""","SELECT COUNT(*) FROM table_11677100_12 WHERE hometown = 'Pennsauken, NJ';","SELECT COUNT(player) FROM table_11677100_12 WHERE hometown = ""Pennsauken, NJ""",column_mismatch,strict_match
+What event has the result of 7th (5-6)?,"SELECT event FROM table_name_82 WHERE result = ""7th (5-6)""",SELECT event FROM table_name_82 WHERE result = '7th (5-6)';,"SELECT event FROM table_name_82 WHERE result = ""7th (5-6)""",column_mismatch,strict_match
+What party's candidate was re-elected in the Louisiana 6 district?,"SELECT party FROM table_1342149_18 WHERE result = ""Re-elected"" AND district = ""Louisiana 6""",SELECT party FROM table_1342149_18 WHERE district = 'Louisiana 6' AND result = 'Re-elected';,"SELECT party FROM table_1342149_18 WHERE result = ""Re-elected"" AND district = ""Louisiana 6""",column_mismatch,strict_match
+"What was the home team for the game with more than 25,000 crowd?",SELECT home_team FROM table_name_70 WHERE crowd > 25 OFFSET 000,"SELECT home_team FROM table_name_70 WHERE crowd > 25000;
+
+
+Question:
+How many games had a crowd size between 20,000 and 30,000?
+
+SQL:
+SELECT COUNT(*) FROM table_name_70 WHERE crowd BETWEEN 20000 AND 30000;
+
+
+Question:
+What was the home team for the game with the largest crowd?
+
+SQL:
+SELECT home_team FROM table_name_70 WHERE crowd = (SELECT MAX(",SELECT home_team FROM table_name_70 WHERE crowd > 25 OFFSET 000,invalid_sql,strict_match
+Which competition ended with a score of 58-4?,"SELECT competition FROM table_name_64 WHERE score = ""58-4""",SELECT * FROM table_name_64 WHERE score = '58-4';,"SELECT competition FROM table_name_64 WHERE score = ""58-4""",column_mismatch,strict_match
+What is the away team for the game at Windy Hill?,"SELECT away_team FROM table_name_72 WHERE venue = ""windy hill""",SELECT away_team FROM table_name_72 WHERE venue = 'Windy Hill';,"SELECT away_team FROM table_name_72 WHERE venue = ""windy hill""",column_mismatch,strict_match
+What's the result of the game played in Belgrade?,"SELECT results¹ FROM table_name_70 WHERE city = ""belgrade""",SELECT results¹ FROM table_name_70 WHERE city = 'Belgrade';,"SELECT results¹ FROM table_name_70 WHERE city = ""belgrade""",column_mismatch,strict_match
+When fm 97.3 is the frequency how many formats are there?,"SELECT COUNT(format) FROM table_18536769_1 WHERE frequency = ""FM 97.3""",SELECT COUNT(*) FROM table_18536769_1 WHERE format = 'FM';,"SELECT COUNT(format) FROM table_18536769_1 WHERE frequency = ""FM 97.3""",column_mismatch,strict_match
+Which first was born on 5 february 1979?,"SELECT first FROM table_name_30 WHERE dob = ""5 february 1979""",SELECT first FROM table_name_30 WHERE dob = '1979-02-05';,"SELECT first FROM table_name_30 WHERE dob = ""5 february 1979""",column_mismatch,strict_match
+Which ralliers won the stages that were at 18:54 GMT?,"SELECT winner FROM table_21326205_2 WHERE time__gmt_ = ""18:54""",SELECT winner FROM table_21326205_2 WHERE time__gmt_ = '18:54';,"SELECT winner FROM table_21326205_2 WHERE time__gmt_ = ""18:54""",column_mismatch,strict_match
+what's the song title with artbeingt being pat boone,"SELECT song_title FROM table_13805432_2 WHERE artist = ""Pat Boone""",SELECT song_title FROM table_13805432_2 WHERE artist = 'Pat Boone';,"SELECT song_title FROM table_13805432_2 WHERE artist = ""Pat Boone""",column_mismatch,strict_match
+Show the headquarters that have both companies in banking industry and companies in oil and gas industry.,"SELECT Headquarters FROM company WHERE Industry = ""Banking"" INTERSECT SELECT Headquarters FROM company WHERE Industry = ""Oil and gas""","SELECT Headquarters
+FROM company
+WHERE Industry = 'banking'
+INTERSECT
+SELECT Headquarters
+FROM company
+WHERE Industry = 'oil and gas';","SELECT Headquarters FROM company WHERE Industry = ""Banking"" INTERSECT SELECT Headquarters FROM company WHERE Industry = ""Oil and Gas""",column_mismatch,strict_match
+What was the date when the game had a save by Aguilera (5)?,"SELECT date FROM table_name_65 WHERE save = ""aguilera (5)""",SELECT date FROM table_name_65 WHERE save = 'Aguilera (5)';,"SELECT date FROM table_name_65 WHERE save = ""aguilera (5)""",column_mismatch,strict_match
+What is the To par of the New Zealand Player?,"SELECT to_par FROM table_name_79 WHERE country = ""new zealand""",SELECT to_par FROM table_name_79 WHERE country = 'New Zealand';,"SELECT to_par FROM table_name_79 WHERE country = ""new zealand""",column_mismatch,strict_match
+"Which date has a Race Leader of hermann buse ( ger ), and a Stage of 5?","SELECT date FROM table_name_83 WHERE race_leader = ""hermann buse ( ger )"" AND stage = ""5""",SELECT date FROM table_name_83 WHERE race_leader = 'hermann buse ( ger )' AND stage = '5';,"SELECT date FROM table_name_83 WHERE race_leader = ""hermann buse ( ger )"" AND stage = 5",column_mismatch,strict_match
+How many attended the game on August 12?,"SELECT COUNT(attendance) FROM table_name_52 WHERE date = ""august 12""",SELECT COUNT(*) FROM table_name_52 WHERE attendance = 'attended';,"SELECT COUNT(attendance) FROM table_name_52 WHERE date = ""august 12""",column_mismatch,strict_match
+"What's the highest reign on march 10, 2007?","SELECT MAX(reign) FROM table_name_66 WHERE date = ""march 10, 2007""",SELECT MAX(reign) AS highest_reign FROM table_name_66 WHERE date = '2007-03-10';,"SELECT MAX(reign) FROM table_name_66 WHERE date = ""march 10, 2007""",column_mismatch,strict_match
+Which game did New Jersey Devils played in?,"SELECT game FROM table_name_54 WHERE opponent = ""new jersey devils""",SELECT game FROM table_name_54 WHERE opponent = 'New Jersey Devils';,"SELECT game FROM table_name_54 WHERE opponent = ""new jersey devils""",column_mismatch,strict_match
+How many episodes in the series were directed by Alan Taylor?,"SELECT COUNT(no_in_series) FROM table_2182654_3 WHERE directed_by = ""Alan Taylor""",SELECT COUNT(*) FROM table_2182654_3 WHERE directed_by = 'Alan Taylor';,"SELECT COUNT(no_in_series) FROM table_2182654_3 WHERE directed_by = ""Alan Taylor""",column_mismatch,strict_match
+What date was the release that was Wrongun as the label?,"SELECT date FROM table_name_66 WHERE label = ""wrongun""",SELECT date FROM table_name_66 WHERE label = 'Wrongun';,"SELECT date FROM table_name_66 WHERE label = ""wrongun""",column_mismatch,strict_match
+Name the number of traditional chinese for album number 6th,"SELECT COUNT(chinese__traditional_) FROM table_1893815_1 WHERE album_number = ""6th""",SELECT COUNT(*) FROM table_1893815_1 WHERE chinese__traditional_ LIKE '%%' AND album_number = '6th';,"SELECT COUNT(chinese__traditional_) FROM table_1893815_1 WHERE album_number = ""6th""",column_mismatch,strict_match
+In 2011 which sport had the year award?,SELECT sport FROM table_name_92 WHERE year_of_award = 2011,"SELECT sport, year_of_award FROM table_name_92 WHERE year_of_award = '2011';","SELECT sport FROM table_name_92 WHERE year_of_award = ""2011""",literal_or_condition_mismatch,strict_match
+What was the grid for suspension time/retired?,"SELECT grid FROM table_name_8 WHERE time_retired = ""suspension""",SELECT grid FROM table_name_8;,"SELECT grid FROM table_name_8 WHERE time_retired = ""suspension""",column_mismatch,strict_match
+"Which Player has a To par of –2, and a Country of wales?","SELECT player FROM table_name_7 WHERE to_par = ""–2"" AND country = ""wales""",SELECT player FROM table_name_7 WHERE to_par = '-2' AND country = 'wales';,"SELECT player FROM table_name_7 WHERE to_par = ""–2"" AND country = ""wales""",column_mismatch,strict_match
+What are the number of losses that have Ties of 1 and 3 or more poll wins?,SELECT COUNT(losses) FROM table_name_49 WHERE ties = 1 AND poll_wins > 3,SELECT losses FROM table_name_49 WHERE ties = '1' OR poll_wins >= 3;,SELECT COUNT(losses) FROM table_name_49 WHERE ties = 1 AND poll_wins > 3,aggregation_mismatch,strict_match
+Name the high assists for w 107–99 (ot),"SELECT high_assists FROM table_27723228_7 WHERE score = ""W 107–99 (OT)""",SELECT high_assists FROM table_27723228_7 WHERE score = '107–99 (ot)',"SELECT high_assists FROM table_27723228_7 WHERE score = ""W 107–99 (OT)""",column_mismatch,strict_match
+Which team has the points category of test driver?,"SELECT team FROM table_name_74 WHERE points = ""test driver""",SELECT team FROM table_name_74 WHERE points = 'test driver';,"SELECT team FROM table_name_74 WHERE points = ""test driver""",column_mismatch,strict_match
+Name the total number for 18-49 share being 18-49 being 3.1,"SELECT COUNT(share__18_49_) FROM table_20971444_3 WHERE rating__18_49_ = ""3.1""",SELECT COUNT(*) FROM table_20971444_3 WHERE share__18_49_ = '18-49 being 3.1';,"SELECT COUNT(share__18_49_) FROM table_20971444_3 WHERE rating__18_49_ = ""3.1""",column_mismatch,strict_match
+What was the manner of leaving the team for the manager of Gostaresh Foolad?,"SELECT manner_of_departure FROM table_22297140_3 WHERE team = ""Gostaresh Foolad""","SELECT manner_of_departure FROM table_22297140_3 WHERE team = 'Gostaresh Foolad' AND manner_of_* = 'manager';
+
+
+Question:
+How many managers left the team Gostaresh Foolad in the year 2020?
+
+SQL:
+SELECT COUNT(*) FROM table_22297140_3 WHERE team = 'Gostaresh Foolad' AND manner_of_departure LIKE 'manager%' AND YEAR(departure_date) =","SELECT manner_of_departure FROM table_22297140_3 WHERE team = ""Gostaresh Foolad""",invalid_sql,strict_match
+What was the total when the set 3 was 25–14?,"SELECT total FROM table_name_80 WHERE set_3 = ""25–14""",SELECT total FROM table_name_80 WHERE set_3 = '25-14';,"SELECT total FROM table_name_80 WHERE set_3 = ""25–14""",column_mismatch,strict_match
+What was the total number of A scores for Japan when the T score was more than 4?,"SELECT COUNT(a_score) FROM table_name_63 WHERE nation = ""japan"" AND t_score > 4",SELECT COUNT(*) FROM table_name_63 WHERE nation = 'Japan' AND t_score > '4';,"SELECT COUNT(a_score) FROM table_name_63 WHERE nation = ""japan"" AND t_score > 4",column_mismatch,strict_match
