@@ -187,12 +187,12 @@ These notebooks were developed and tested on:
 
 | Requirement | Minimum | Tested On |
 |-------------|---------|-----------|
-| GPU VRAM | 12 GB | 14.6 GB (Tesla T4) |
+| GPU | 12 GB VRAM | NVIDIA H100 / RTX Pro 6000 (Blackwell) |
 | CUDA Version | 7.5+ | CUDA 12.x |
 | RAM | 16 GB | — |
 | Python | 3.10+ | 3.10 |
 
-> All experiments use 4-bit quantization to fit 8B parameter models on a single 16 GB GPU. For smaller GPUs (8–10 GB), reduce `max_seq_length` or `per_device_train_batch_size`.
+> Experiments were conducted on an **NVIDIA H100** and **NVIDIA RTX Pro 6000 (Blackwell edition)**. 4-bit quantization is still used for memory efficiency and faster training. For consumer GPUs (8–16 GB VRAM), reduce `max_seq_length` or `per_device_train_batch_size`.
 
 ---
 
