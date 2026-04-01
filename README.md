@@ -187,7 +187,7 @@ These notebooks were developed and tested on:
 
 | Requirement | Minimum | Tested On |
 |-------------|---------|-----------|
-| GPU | 12 GB VRAM | NVIDIA H100 / RTX Pro 6000 Blackwell |
+| GPU | 80-96 GB VRAM | NVIDIA H100 / RTX Pro 6000 Blackwell |
 | CUDA Version | 7.5+ | CUDA 12.x |
 | RAM | 16 GB | — |
 | Python | 3.10+ | 3.10 |
