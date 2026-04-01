@@ -187,12 +187,12 @@ These notebooks were developed and tested on:
 
 | Requirement | Minimum | Tested On |
 |-------------|---------|-----------|
-| GPU | 12 GB VRAM | NVIDIA H100 / RTX Pro 6000 (Blackwell) |
+| GPU | 12 GB VRAM | NVIDIA H100 / RTX Pro 6000 Blackwell |
 | CUDA Version | 7.5+ | CUDA 12.x |
 | RAM | 16 GB | — |
 | Python | 3.10+ | 3.10 |
 
-> Experiments were conducted on an **NVIDIA H100** and **NVIDIA RTX Pro 6000 (Blackwell edition)**. 4-bit quantization is still used for memory efficiency and faster training. For consumer GPUs (8–16 GB VRAM), reduce `max_seq_length` or `per_device_train_batch_size`.
+> Experiments were conducted on an **NVIDIA H100** and **NVIDIA RTX Pro 6000 Blackwell**. 4-bit quantization is still used for memory efficiency and faster training. For consumer GPUs (8–16 GB VRAM), reduce `max_seq_length` or `per_device_train_batch_size`.
 
 ---
 
